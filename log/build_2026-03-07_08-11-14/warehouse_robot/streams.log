@@ -1,0 +1,39 @@
+[0.592s] Invoking command in '/home/bigboss/warehouse_ws/src/warehouse_robot': PYTHONPATH=/home/bigboss/warehouse_ws/build/warehouse_robot/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/bigboss/warehouse_ws/install/warehouse_robot/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../../build/warehouse_robot build --build-base /home/bigboss/warehouse_ws/build/warehouse_robot/build install --record /home/bigboss/warehouse_ws/build/warehouse_robot/install.log --single-version-externally-managed install_data
+[0.873s] running egg_info
+[0.873s] creating ../../build/warehouse_robot/warehouse_robot.egg-info
+[0.873s] writing ../../build/warehouse_robot/warehouse_robot.egg-info/PKG-INFO
+[0.874s] writing dependency_links to ../../build/warehouse_robot/warehouse_robot.egg-info/dependency_links.txt
+[0.874s] writing entry points to ../../build/warehouse_robot/warehouse_robot.egg-info/entry_points.txt
+[0.874s] writing requirements to ../../build/warehouse_robot/warehouse_robot.egg-info/requires.txt
+[0.874s] writing top-level names to ../../build/warehouse_robot/warehouse_robot.egg-info/top_level.txt
+[0.874s] writing manifest file '../../build/warehouse_robot/warehouse_robot.egg-info/SOURCES.txt'
+[0.877s] reading manifest file '../../build/warehouse_robot/warehouse_robot.egg-info/SOURCES.txt'
+[0.878s] writing manifest file '../../build/warehouse_robot/warehouse_robot.egg-info/SOURCES.txt'
+[0.879s] running build
+[0.879s] running build_py
+[0.879s] creating /home/bigboss/warehouse_ws/build/warehouse_robot/build
+[0.879s] creating /home/bigboss/warehouse_ws/build/warehouse_robot/build/lib
+[0.879s] creating /home/bigboss/warehouse_ws/build/warehouse_robot/build/lib/warehouse_robot
+[0.879s] copying warehouse_robot/task_node.py -> /home/bigboss/warehouse_ws/build/warehouse_robot/build/lib/warehouse_robot
+[0.879s] copying warehouse_robot/__init__.py -> /home/bigboss/warehouse_ws/build/warehouse_robot/build/lib/warehouse_robot
+[0.879s] copying warehouse_robot/sensor_node.py -> /home/bigboss/warehouse_ws/build/warehouse_robot/build/lib/warehouse_robot
+[0.879s] running install
+[0.880s] running install_lib
+[0.881s] creating /home/bigboss/warehouse_ws/install/warehouse_robot/lib/python3.10/site-packages/warehouse_robot
+[0.881s] copying /home/bigboss/warehouse_ws/build/warehouse_robot/build/lib/warehouse_robot/task_node.py -> /home/bigboss/warehouse_ws/install/warehouse_robot/lib/python3.10/site-packages/warehouse_robot
+[0.881s] copying /home/bigboss/warehouse_ws/build/warehouse_robot/build/lib/warehouse_robot/__init__.py -> /home/bigboss/warehouse_ws/install/warehouse_robot/lib/python3.10/site-packages/warehouse_robot
+[0.881s] copying /home/bigboss/warehouse_ws/build/warehouse_robot/build/lib/warehouse_robot/sensor_node.py -> /home/bigboss/warehouse_ws/install/warehouse_robot/lib/python3.10/site-packages/warehouse_robot
+[0.882s] byte-compiling /home/bigboss/warehouse_ws/install/warehouse_robot/lib/python3.10/site-packages/warehouse_robot/task_node.py to task_node.cpython-310.pyc
+[0.882s] byte-compiling /home/bigboss/warehouse_ws/install/warehouse_robot/lib/python3.10/site-packages/warehouse_robot/__init__.py to __init__.cpython-310.pyc
+[0.882s] byte-compiling /home/bigboss/warehouse_ws/install/warehouse_robot/lib/python3.10/site-packages/warehouse_robot/sensor_node.py to sensor_node.cpython-310.pyc
+[0.882s] running install_data
+[0.882s] creating /home/bigboss/warehouse_ws/install/warehouse_robot/share/ament_index
+[0.882s] creating /home/bigboss/warehouse_ws/install/warehouse_robot/share/ament_index/resource_index
+[0.882s] creating /home/bigboss/warehouse_ws/install/warehouse_robot/share/ament_index/resource_index/packages
+[0.882s] copying resource/warehouse_robot -> /home/bigboss/warehouse_ws/install/warehouse_robot/share/ament_index/resource_index/packages
+[0.883s] copying package.xml -> /home/bigboss/warehouse_ws/install/warehouse_robot/share/warehouse_robot
+[0.883s] running install_egg_info
+[0.884s] Copying ../../build/warehouse_robot/warehouse_robot.egg-info to /home/bigboss/warehouse_ws/install/warehouse_robot/lib/python3.10/site-packages/warehouse_robot-0.0.0-py3.10.egg-info
+[0.885s] running install_scripts
+[0.909s] writing list of installed files to '/home/bigboss/warehouse_ws/build/warehouse_robot/install.log'
+[0.933s] Invoked command in '/home/bigboss/warehouse_ws/src/warehouse_robot' returned '0': PYTHONPATH=/home/bigboss/warehouse_ws/build/warehouse_robot/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/bigboss/warehouse_ws/install/warehouse_robot/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../../build/warehouse_robot build --build-base /home/bigboss/warehouse_ws/build/warehouse_robot/build install --record /home/bigboss/warehouse_ws/build/warehouse_robot/install.log --single-version-externally-managed install_data
