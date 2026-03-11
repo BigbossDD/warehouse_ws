@@ -1,7 +1,7 @@
 import rclpy
 from rclpy.node import Node
 from example_interfaces.srv import Trigger
-
+import time 
 class TaskNode(Node):
 
     def __init__(self):
@@ -19,6 +19,7 @@ class TaskNode(Node):
 
         self.get_logger().info("Delivery request received!")
 
+        time.sleep(5)
         response.success = True
         response.message = "Robot is moving to the requested destination."
 
