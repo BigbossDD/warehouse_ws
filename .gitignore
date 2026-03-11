@@ -1,0 +1,31 @@
+# VSCode settings folder
+.vscode/
+
+# Python cache files (if any)
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Environment files
+.env
+.venv/
+env/
+venv/
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+
+# Build folders
+build/
+dist/
+*.egg-info/
+
+# Temporary files
+*.tmp
+*.swp
+*.swo
