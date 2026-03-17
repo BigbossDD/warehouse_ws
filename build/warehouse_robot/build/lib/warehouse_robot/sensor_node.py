@@ -1,33 +1,33 @@
-import rclpy
-from rclpy.node import Node
-from std_msgs.msg import Float32
+import rclpy #
+from rclpy.node import Node # 
+from std_msgs.msg import Float32 #
 import random
 
 class SensorNode(Node):
 
     def __init__(self):
         super().__init__('sensor_node')
+        timer = 2.0
+        
+        self.publisher = self.create_publisher(Float32, 'battery_status', 10) # type / name   / buffer size 
 
-        self.publisher_ = self.create_publisher(Float32, 'battery_status', 10)
+        
+        self.timer = self.create_timer(timer, self.publish_battery) # how freq to  msg 
+        
+        self.battery_lvl = 100.0
+    def publish_battery(self): # 
 
-        timer_period = 2.0
-        self.timer = self.create_timer(timer_period, self.publish_battery)
+        msg= Float32()
 
-        self.battery_level = 100.0
+        # this will show that the battry lvl going down as if robot is used 
+        self.battery_lvl -= random.uniform(0.5, 1.5)
 
-    def publish_battery(self):
+        if self.battery_lvl < 0:
+            self.battery_lvl = 100
 
-        msg = Float32()
+        msg.data = self.battery_lvl
 
-        # simulate battery drain
-        self.battery_level -= random.uniform(0.5, 1.5)
-
-        if self.battery_level < 0:
-            self.battery_level = 100
-
-        msg.data = self.battery_level
-
-        self.publisher_.publish(msg)
+        self.publisher.publish(msg) # 
 
         self.get_logger().info(f'Battery Level: {msg.data:.2f}%')
 
@@ -35,14 +35,17 @@ class SensorNode(Node):
 def main(args=None):
 
     rclpy.init(args=args)
+#
+    nod= SensorNode()
+    #
+    rclpy.spin(nod)
 
-    node = SensorNode()
-
-    rclpy.spin(node)
-
-    node.destroy_node()
+    #
+    nod.destroy_node()
     rclpy.shutdown()
 
 
 if __name__ == '__main__':
+    print('starting !!!')
     main()
+    print('ending')

@@ -24,8 +24,6 @@ class TaskNode(Node):
         response.message = "Robot is moving to the requested destination."
 
         return response
-
-
 def main(args=None):
 
     rclpy.init(args=args)
