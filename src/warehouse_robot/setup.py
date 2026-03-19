@@ -23,7 +23,9 @@ setup(
         ],
     },
     entry_points={
-        'console_scripts': [
-        ],
-    },
+    'console_scripts': [
+        'sensor_node = warehouse_robot.sensor_node:main',
+        'task_node = warehouse_robot.task_node:main',
+    ],
+},
 )

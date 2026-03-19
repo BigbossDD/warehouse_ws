@@ -2,6 +2,7 @@ import rclpy #
 from rclpy.node import Node # 
 from std_msgs.msg import Float32 #
 import random
+import time
 
 class SensorNode(Node):
 
@@ -29,7 +30,7 @@ class SensorNode(Node):
 
         self.publisher.publish(msg) # 
 
-        self.get_logger().info(f'Battery Level: {msg.data:.2f}%')
+        self.get_logger().info(f'battery level is --> {msg.data:.2f}%')
 
 
 def main(args=None):
@@ -46,6 +47,6 @@ def main(args=None):
 
 
 if __name__ == '__main__':
-    print('starting !!!')
+    print('~~~starting !!!')
     main()
-    print('ending')
+    print('ending~~~')
