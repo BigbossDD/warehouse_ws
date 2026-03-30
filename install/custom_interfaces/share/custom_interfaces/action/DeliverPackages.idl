@@ -1,0 +1,20 @@
+// generated from rosidl_adapter/resource/action.idl.em
+// with input from custom_interfaces/action/DeliverPackages.action
+// generated code does not contain a copyright notice
+
+
+module custom_interfaces {
+  module action {
+    struct DeliverPackages_Goal {
+      string destination;
+    };
+    struct DeliverPackages_Result {
+      boolean success;
+
+      string message;
+    };
+    struct DeliverPackages_Feedback {
+      float distance_remaining;
+    };
+  };
+};

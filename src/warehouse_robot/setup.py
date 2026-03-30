@@ -26,6 +26,9 @@ setup(
     'console_scripts': [
         'sensor_node = warehouse_robot.sensor_node:main',
         'task_node = warehouse_robot.task_node:main',
+        'delivery_action_server = warehouse_robot.delivery_action_server:main',
+        'delivery_action_client = warehouse_robot.delivery_action_client:main',
+        'safety_monitor_node = warehouse_robot.safety_monitor_node:main'
     ],
 },
 )
