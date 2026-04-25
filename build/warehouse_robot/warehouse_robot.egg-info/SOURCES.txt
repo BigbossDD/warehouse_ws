@@ -8,10 +8,14 @@ setup.py
 ../../build/warehouse_robot/warehouse_robot.egg-info/requires.txt
 ../../build/warehouse_robot/warehouse_robot.egg-info/top_level.txt
 ../../build/warehouse_robot/warehouse_robot.egg-info/zip-safe
+launch/system.launch.xml
 resource/warehouse_robot
 test/test_copyright.py
 test/test_flake8.py
 test/test_pep257.py
 warehouse_robot/__init__.py
+warehouse_robot/delivery_action_client.py
+warehouse_robot/delivery_action_server.py
+warehouse_robot/safety_monitor_node.py
 warehouse_robot/sensor_node.py
 warehouse_robot/task_node.py

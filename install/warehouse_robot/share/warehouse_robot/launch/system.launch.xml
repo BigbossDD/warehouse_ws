@@ -1,0 +1,33 @@
+<launch>
+
+    <!-- Sensor Node -->
+    <node pkg="warehouse_robot"
+          exec="sensor_node"
+          name="sensor_node"
+          output="screen" />
+
+    <!-- Task Node -->
+    <node pkg="warehouse_robot"
+          exec="task_node"
+          name="task_node"
+          output="screen" />
+
+    <!-- Action Server -->
+    <node pkg="warehouse_robot"
+          exec="delivery_action_server"
+          name="delivery_action_server"
+          output="screen" />
+
+    <!-- Safety Monitor -->
+    <node pkg="warehouse_robot"
+          exec="safety_monitor_node"
+          name="safety_monitor_node"
+          output="screen" />
+    <!-- data logger rosbag       
+    <node pkg="rosbag2_transport"
+          exec="record"
+          name="rosbag_recorder"
+          output="screen"
+          args="-a" />  --> 
+
+</launch>
