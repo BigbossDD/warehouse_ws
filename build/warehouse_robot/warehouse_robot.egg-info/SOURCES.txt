@@ -8,7 +8,10 @@ setup.py
 ../../build/warehouse_robot/warehouse_robot.egg-info/requires.txt
 ../../build/warehouse_robot/warehouse_robot.egg-info/top_level.txt
 ../../build/warehouse_robot/warehouse_robot.egg-info/zip-safe
+config/safety_params.yaml
+launch/actionServer_and_service_nodes_test.launch.xml
 launch/system.launch.xml
+launch/test_safetyNode_only.xml
 resource/warehouse_robot
 test/test_copyright.py
 test/test_flake8.py

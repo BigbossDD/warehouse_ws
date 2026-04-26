@@ -1,0 +1,4 @@
+safety_monitor_node:
+  ros__parameters:
+    robot_speed: 1.5
+    emergency_stop_dist: 2.0

@@ -1,0 +1,14 @@
+<launch>
+ <!-- Task Node -->
+    <node pkg="warehouse_robot"
+          exec="task_node"
+          name="task_node"
+          output="screen" />
+
+    <!-- Action Server -->
+    <node pkg="warehouse_robot"
+          exec="delivery_action_server"
+          name="delivery_action_server"
+          output="screen" />
+    
+</launch>

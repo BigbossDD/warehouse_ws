@@ -17,22 +17,15 @@
           exec="delivery_action_server"
           name="delivery_action_server"
           output="screen" />
-
+    
     <!-- Safety Monitor -->
-    <node pkg="warehouse_robot"
+     <node pkg="warehouse_robot"
           exec="safety_monitor_node"
           name="safety_monitor_node"
-          output="screen" />
-    <!-- data logger rosbag       
-    <node pkg="rosbag2_transport"
-          exec="record"
-          name="rosbag_recorder"
-          output="screen"
-          args="-a" />  --> 
-      <!--it led to a crush so use 
-      ros2 bag record -a
-      and to check it out 
-      ros2 bag info rosbag2_*
-      -->
+          output="screen">
 
+        <param from="$(find-pkg-share warehouse_robot)/config/safety_params.yaml" />
+
+    </node>
+   
 </launch>

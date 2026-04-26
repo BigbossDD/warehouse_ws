@@ -11,24 +11,22 @@ class DeliveryActionClient(Node):
         super().__init__('delivery_action_client')
 
         self._action_client = ActionClient(
-            self,
-            DeliverPackages,
-            'deliver_package'
-        )
+                    self,
+                    DeliverPackages,
+                    'deliver_package'
+                )
 
-        self.get_logger().info("🚀 Action Client started")
+        self.get_logger().info("<Action Client started>")
 
-    # -------------------------
-    # Send Goal
-    # -------------------------
+    ############### ##################
     def send_goal(self, destination):
-        self.get_logger().info("⏳ Waiting for action server...")
+        self.get_logger().info("Waiting for action server...!")
         self._action_client.wait_for_server()
 
         goal_msg = DeliverPackages.Goal()
         goal_msg.destination = destination
 
-        self.get_logger().info(f"📦 Sending delivery request to: {destination}")
+        self.get_logger().info(f"Sending delivery request to: {destination}")
 
         self._send_goal_future = self._action_client.send_goal_async(
             goal_msg,
@@ -37,50 +35,43 @@ class DeliveryActionClient(Node):
 
         self._send_goal_future.add_done_callback(self.goal_response_callback)
 
-    # -------------------------
-    # Goal Response
-    # -------------------------
+    #################################
     def goal_response_callback(self, future):
         goal_handle = future.result()
 
         if not goal_handle.accepted:
-            self.get_logger().error("❌ Goal rejected by server")
+            self.get_logger().error("<GOAL RESPONSE>Goal rejected by server")
             return
 
-        self.get_logger().info("✅ Goal accepted! Waiting for result...")
+        self.get_logger().info("<GOAL RESPONSE>Goal accepted! Waiting for result...")
 
         self._get_result_future = goal_handle.get_result_async()
         self._get_result_future.add_done_callback(self.get_result_callback)
 
-    # -------------------------
-    # Feedback
-    # -------------------------
+    ############################
     def feedback_callback(self, feedback_msg):
         distance = feedback_msg.feedback.distance_remaining
-        self.get_logger().info(f"📡 Distance remaining: {distance:.2f} m")
+        self.get_logger().info(f"<FEEDBACK>Distance remaining: {distance:.2f} m")
 
-    # -------------------------
-    # Result
-    # -------------------------
+   ##############################
     def get_result_callback(self, future):
         result = future.result().result
         status = future.result().status
 
-        if status == 4:  # SUCCEEDED
+        if status == 4: 
             self.get_logger().info(
-                f"🎯 Delivery Finished: {result.success}, Message: {result.message}"
+                f"<FINAL RESULT>Delivery Finished: {result.success}, Message: {result.message}"
             )
         else:
-            self.get_logger().warn(f"⚠️ Delivery failed with status: {status}")
+            self.get_logger().warn(f"<FINAL RESULT>Delivery failed with status: {status}")
 
-
+################################################################################
 def main(args=None):
     rclpy.init(args=args)
 
     node = DeliveryActionClient()
 
-    # Example destination (you can change this)
-    node.send_goal("Shipping Zone")
+    node.send_goal("sector_5")
 
     rclpy.spin(node)
 

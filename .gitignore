@@ -1,6 +1,6 @@
 # VSCode settings folder
 .vscode/
-
+*.zip
 # Python cache files (if any)
 __pycache__/
 *.pyc

@@ -25,68 +25,64 @@ class DeliveryActionServer(Node):
             callback_group=self._callback_group
         )
 
-        self.get_logger().info("🚀 Delivery Action Server is ready...")
+        self.get_logger().info("<Delivery Action Server is ready...>")
 
-    # -------------------------
-    # Goal Handling
-    # -------------------------
+    ############################################################
     def goal_callback(self, goal_request):
-        self.get_logger().info(f"📦 New delivery request to: {goal_request.destination}")
+        self.get_logger().info(f"New delivery request to: {goal_request.destination}")
 
         if goal_request.destination == "":
-            self.get_logger().warn("❌ Empty destination rejected")
+            self.get_logger().warn("Empty destination rejected")
             return GoalResponse.REJECT
 
         return GoalResponse.ACCEPT
 
-    # -------------------------
-    # Cancel Handling
-    # -------------------------
+    # ##############################!##########
+    
     def cancel_callback(self, goal_handle):
-        self.get_logger().info("⚠️ Cancel request received")
+        self.get_logger().info("cancel requests received")
         return CancelResponse.ACCEPT
 
-    # -------------------------
-    # Execution Logic
-    # -------------------------
+    # ##############################!##########
+   
     async def execute_callback(self, goal_handle):
-        self.get_logger().info("🚚 Starting delivery...")
+        self.get_logger().info("Starting delivery...")
 
         feedback_msg = DeliverPackages.Feedback()
         result = DeliverPackages.Result()
 
-        # Simulated distance (meters)
-        distance = 10.0
+        
+        distance = 10.0 #NOTE this for testing remove later
 
         while distance > 0.0:
 
-            # Check cancellation
+            
             if goal_handle.is_cancel_requested:
                 goal_handle.canceled()
                 result.success = False
                 result.message = "Delivery canceled"
-                self.get_logger().info("❌ Delivery canceled")
+                self.get_logger().info("Delivery canceled")
                 return result
 
-            # Publish feedback
+            ################################
             feedback_msg.distance_remaining = distance
-            self.get_logger().info(f"📡 Distance remaining: {distance:.2f} m")
-            goal_handle.publish_feedback(feedback_msg)
+            self.get_logger().info(f"Distance remaining: {distance:.2f} m")
+            goal_handle.publish_feedback(feedback_msg)#NOTE
 
-            # Simulate movement
+            #NOTE this is to just to test the node 
             time.sleep(1.0)
             distance -= 1.0
 
-        # Goal reached
+            #  # # # # #  # # # # # ## 
         goal_handle.succeed()
         result.success = True
         result.message = "Package delivered successfully"
 
-        self.get_logger().info("✅ Delivery completed!")
+        self.get_logger().info("Delivery completed!")
 
         return result
 
-
+################################################################################
 def main(args=None):
     rclpy.init(args=args)
 
