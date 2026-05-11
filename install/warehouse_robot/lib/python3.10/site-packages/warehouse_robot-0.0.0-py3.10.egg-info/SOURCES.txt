@@ -9,6 +9,8 @@ setup.py
 ../../build/warehouse_robot/warehouse_robot.egg-info/top_level.txt
 ../../build/warehouse_robot/warehouse_robot.egg-info/zip-safe
 config/safety_params.yaml
+launch/TEMP_DELETE_AFTER.launch.xml
+launch/TEST_GAZ_RVIZ.launch.xml
 launch/actionServer_and_service_nodes_test.launch.xml
 launch/system.launch.xml
 launch/test_safetyNode_only.xml
@@ -16,6 +18,7 @@ resource/warehouse_robot
 test/test_copyright.py
 test/test_flake8.py
 test/test_pep257.py
+urdf/warehouse_robot.urdf.xacro
 warehouse_robot/__init__.py
 warehouse_robot/delivery_action_client.py
 warehouse_robot/delivery_action_server.py
